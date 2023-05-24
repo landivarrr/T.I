@@ -1,14 +1,16 @@
-.all{
-    width: 120px;
-    height: 15px;
-    text-align: center;
-    background: black;
-    padding: 10px;
-    text-decoration: none;
-    list-style-type: none;
-    align-items: center;
-    border-radius: 30px;
-    margin: auto;
-    margin-top: 30px;
+.todo{
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    list-style-type: none;
+    text-decoration: none;
+}
+body{
+    background-color: aqua;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
