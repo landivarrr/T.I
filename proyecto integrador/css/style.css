@@ -27,19 +27,17 @@
     padding: 10px;
 }
 .buscador{
-    width: 120px;
-    height: 15px;
-    text-align: center;
-    background: rgb(207, 35, 35);
-    padding: 10px;
+    background-color: rgb(207, 35, 35);
+    display: inline-block;
     text-decoration: none;
-    list-style-type: none;
-    align-items: center;
-    border-radius: 50px;
-    margin: auto;
-    margin-top: 30px;
-    justify-content: space-between;
     color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    text-align: center;
+    justify-content: baseline;
+    border: solid 3px black;
+    padding: 10px;
 }
 body{
     background-color:rgb(255, 253, 253);
