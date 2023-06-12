@@ -1,47 +1,68 @@
-let urlcanciones="https://api.deezer.com/track/3135556"
-let section=document.querySelector(".cancioneslist")
-fetch(urlcanciones)
-.then(function(response) {
-  return response.json()
-})
-.then(function(data){
-    let result=data.contributors;
-    let canciones=""
-    for (let i = 0; i < result.length; i++){
-        canciones+=`<h2>CANCIONES</h2>
-        <ul>
-            <article>
-                <li>
+let url="https://api.allorigins.win/raw?url=https://api.deezer.com/chart"
+let sectiontrack = document.querySelector(".cancioneslist")
+fetch(url)
+  .then(function (response) {
+    return response.json()
+  })
+  .then(function (data) {
+    console.log(data)
+    let result = data.tracks.data;
+    let canciones = ""
+    for (let i = 0; i < 5; i++) {
+      canciones += `<a href="./detail-cancion.html">
+            <article class='cajahija'>
+            <h2>${result[i].artist.name}</h2>
+            <img src="${result[i].album.cover}" alt="">
+            <p class="nombrecancion">${result[i].title}</p>
+            </article></a>`
+      }
+    sectiontrack.innerHTML = canciones;
+  })
+  .catch(function (error) {
+    console.log("Error: " + error);
+    
+  })
 
-                </li>
-            </article>
-            <article>
-                <li>
+  let sectionalbumes = document.querySelector(".albumeslist")
 
-                </li>
-            </article>
-            <article>
-                <li>
+  fetch(url)
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (data) {
+      console.log(data)
+      let result = data.albums.data;
+      let albumes = ""
+      for (let i = 0; i < 5; i++) {
+        albumes += `<a href="./detail-album.html">
+              <article class='cajahija'>
+              <h2>${result[i].artist.name}</h2>
+              <img src="${result[i].cover}" alt="">
+              <p class="nombrecancion">${result[i].title}</p>
+          </article></a>`}
+      sectionalbumes.innerHTML = albumes;
+    })
+    .catch(function (error) {
+      console.log("Error: " + error);
+    })
 
-                </li>
-            </article>
-            <article>
-                <li>
-
-                </li>
-            </article>
-            <article>
-                <li>
-
-                </li>
-            </article>
-            <article>
-                <li>
-
-                </li>
-            </article>
-        </ul>`
- section.innerHTML=canciones;})
-.catch(function(error) {
-  console.log("Error: " + error);
-})
+  let sectionartistas = document.querySelector(".artistaslist")
+  fetch(url)
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (data) {
+      console.log(data)
+      let result = data.artists.data;
+      let artistas = ""
+      for (let i = 0; i < 5; i++) {
+        artistas += `<a href="./detail-artist.html">
+              <article class='cajahija'>
+              <h2>${result[i].name}</h2>
+              <img src="${result[i].picture}" alt="">
+                    </article></a>`}
+      sectionartistas.innerHTML = artistas;
+    })
+    .catch(function (error) {
+      console.log("Error: " + error);
+    })

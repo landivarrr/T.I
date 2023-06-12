@@ -7,27 +7,31 @@
 .todo{
     display: flex;
     justify-content: space-between;
-    padding: 0;
-
 }
 .todo li  {
     list-style: none;
 }
+.home{width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;}
 .todo li a{
-    background-color: rgb(207, 35, 35);
+    background-color: rgb(62, 0, 154);
     display: inline-block;
     text-decoration: none;
-    color: white;
+    color:white;
     width: 100px;
     height: 30px;
     border-radius: 50px;
     text-align: center;
     justify-content: baseline;
-    border: solid 3px black;
+    border: solid 3px white;
     padding: 10px;
 }
+
 .buscador{
-    background-color: rgb(207, 35, 35);
+    background-color:rgb(62, 0, 154);
     display: inline-block;
     text-decoration: none;
     color: white;
@@ -36,18 +40,70 @@
     border-radius: 50px;
     text-align: center;
     justify-content: baseline;
-    border: solid 3px black;
+    border: solid 3px white;
     padding: 10px;
 }
 body{
-    background-color:rgb(255, 253, 253);
+    background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 footer{
-    background-color: rgb(4, 0, 15);
+    background-color:rgb(62, 0, 154);
     text-align: center;
     color: white;
     border-radius: 50%;
     font-family: 'Raleway',sans-serif;}
+.cancioneslist{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
+}
+.cajahija{align-items: baseline;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(https://i.pinimg.com/564x/42/03/f5/4203f5a9848e611e52c5b88ca757ede7.jpg);
+    height: 300px;
+    margin: 10px;
+    padding: 30px;
+    border-color: rgb(90, 236, 5);
+    border:4px rgba(115, 255, 1, 0.763) inset;
+    border: 4px rgb(64, 255, 0);
+    width: 200px;
+    text-align: center;
+    color: white;
+    border-radius: 30px;
+}
+.albumeslist{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.artistaslist{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.nombrecancion{
+    color: white;
+}
+h1{
+    color: white;
+}
+.detallestodo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
