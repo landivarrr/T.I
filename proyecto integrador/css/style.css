@@ -107,9 +107,8 @@ h1{
 a{
     text-decoration: none;
 }
-
 .genreslist{
-    align-items: baseline;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;
+    width: 100%;
+    justify-content: space-around
 }
