@@ -107,3 +107,9 @@ h1{
 a{
     text-decoration: none;
 }
+
+.genreslist{
+    align-items: baseline;
+    justify-content: space-between;
+    align-items: center;
+}

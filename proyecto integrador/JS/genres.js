@@ -1,24 +1,21 @@
-let url="https://api.allorigins.win/raw?url=https://api.deezer.com/genre"
-let sectiongenre= document.querySelector(".genreslist")
+let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/genre"
+let sectiongenre = document.querySelector(".genreslist")
 fetch(url)
   .then(function (response) {
     return response.json()
   })
   .then(function (data) {
-    console.log(data)
-    let result = data.tracks.data;
-    let canciones = ""
-    for (let i = 0; i < 5; i++) {
-      canciones += `<a href="./detail-genres.html">
-            <article class='cajahija'>
-            <h2>${result[i].artist.name}</h2>
-            <img src="${result[i].album.cover}" alt="">
-            <p class="nombrecancion">${result[i].title}</p>
-            </article></a>`
-      }
-    sectiontrack.innerHTML = canciones;
+    console.log(data);
+    let generos = document.querySelector('.genreslist')
+    let result = data.data;
+    for (let i = 1; i < data.data.length; i++) {
+      generos.innerHTML += `<a href="./detail-genres.html?id=${result[i].id}">
+        <img src="${result[i].picture}" alt="${result[i].name}">
+        <h2 class="nombregenero">${result[i].name}</h2>
+        </a>`
+        }
   })
   .catch(function (error) {
     console.log("Error: " + error);
-    
   })
+
