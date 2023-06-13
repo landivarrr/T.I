@@ -9,16 +9,19 @@ fetch(url)
     })
     .then(function (data) {
         console.log(data)
-        let detacancion = ""
-          detacancion += `<a href="./detail-album.html">
+        
+        let detaalbum = ""
+          detaalbum += `<a href="./detail-album.html">
                 <article class='cajahija'>
                 <h2>${data.title}</h2>
                 <img src="${data.artist.picture}" alt="">
                 <p class="nombrecancion">${data.release_date}</p>
                 <p class="nombrecancion">${data.artist.name}</p>
-                <p class="genero">${data.genres.data}</p>
+                <p class="nombrecancion">${data.genres.data}</p>
+                
                  </article></a>`
-        section.innerHTML = detacancion;
+                 
+        section.innerHTML = detaalbum;
       })
       .catch(function (error) {
         console.log("Error: " + error);
