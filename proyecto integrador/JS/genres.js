@@ -7,7 +7,7 @@ fetch(url)
     console.log(data);
     let generos = document.querySelector('.genreslist')
     let result = data.data;
-    for (let i = 1; i < data.data.length; i++) {
+    for (let i = 1; i < 11; i++) {
       generos.innerHTML += `<a href="./detail-genres.html?id=${result[i].id}">
         <article class='cajahija'>
         <h2 class="nombregenero">${result[i].name}</h2> 

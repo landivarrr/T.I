@@ -9,7 +9,7 @@ fetch(url)
     let result = data.tracks.data;
     let canciones = ""
     for (let i = 0; i < 5; i++) {
-      canciones += `<a href="./detail-cancion.html">
+      canciones += `<a href="./detail-cancion.html?id=${result[i].id}">
             <article class='cajahija'>
             <h2>${result[i].artist.name}</h2>
             <img src="${result[i].album.cover}" alt="">
@@ -34,7 +34,7 @@ fetch(url)
       let result = data.albums.data;
       let albumes = ""
       for (let i = 0; i < 5; i++) {
-        albumes += `<a href="./detail-album.html">
+        albumes += `<a href="./detail-album.html?id=${result[i].id}">
               <article class='cajahija'>
               <h2>${result[i].artist.name}</h2>
               <img src="${result[i].cover}" alt="">
@@ -56,7 +56,7 @@ fetch(url)
       let result = data.artists.data;
       let artistas = ""
       for (let i = 0; i < 5; i++) {
-        artistas += `<a href="./detail-artist.html">
+        artistas += `<a href="./detail-artist.html?id=${result[i].id}">
               <article class='cajahija'>
               <h2>${result[i].name}</h2>
               <img src="${result[i].picture}" alt="">
