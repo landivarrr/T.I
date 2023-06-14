@@ -100,10 +100,11 @@ h1{
 }
 .detallestodo{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-
 a{
     text-decoration: none;
 }
@@ -118,4 +119,26 @@ a{
     display: flex;
     flex:wrap;
     justify-content: center;
+}
+.cajadetalle{
+    align-items: baseline;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(https://i.pinimg.com/564x/42/03/f5/4203f5a9848e611e52c5b88ca757ede7.jpg);
+    height: 200px;
+    margin: 10px;
+    padding: 30px;
+    border-color: rgb(90, 236, 5);
+    border:4px rgba(115, 255, 1, 0.763) inset;
+    border: 4px rgb(64, 255, 0);
+    width: 200px;
+    text-align: center;
+    color: white;
+    border-radius: 30px;
+}
+.h1generos{
+    text-align: center;
+}
+.cajadetalle a{
+    text-decoration: none;
 }

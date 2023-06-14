@@ -10,7 +10,7 @@ fetch(url)
     .then(function (data) {
         console.log(data)
         let detacancion = ""
-          detacancion += `<a href="./detail-album.html">
+          detacancion += `<a href="./detail-cancion.html">
                 <article class='cajahija'>
                 <h2>${data.title}</h2>
                 <img src="${data.album.cover}" alt="">
