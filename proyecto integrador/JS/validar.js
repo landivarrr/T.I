@@ -12,7 +12,3 @@ form.addEventListener('submit', function(event) {
         this.submit();
     }
 })
-let formulario = document.querySelector('.buscador')
-        formulario.addEventListener('focus', function () {
-       
-        })

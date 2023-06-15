@@ -1,20 +1,16 @@
+let formularios = document.querySelector('.buscador')
+        formularios.addEventListener('focus', function () {
+       
+        })
+        let loader = document.getElementById("loader");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        function mostrarLoader() {
+          loader.style.display = "block";
+        }
+        
+        function ocultarLoader() {
+          loader.style.display = "none";
+        }
 
 
 

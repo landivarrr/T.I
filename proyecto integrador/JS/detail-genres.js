@@ -13,7 +13,6 @@ fetch(endpoint)
         for (let i = 0; i < 10; i++) {
             document.querySelector('.detallesgeneros').innerHTML += `
             <article class='cajadetalle'>
-            <a href="./detail-artist.html?id=${data.artists.data[i].id}>
             <img src="${data.artists.data[i].picture_small}" alt="${data.artists.data[i].name}">
             <p>
             ${data.artists.data[i].name}

@@ -11,14 +11,14 @@ fetch(url)
         console.log(data)
         
         let detaalbum = ""
-          detaalbum += `<a href="./detail-album.html">
+          detaalbum += `
                 <article class='cajahija'>
                 <h2>${data.title}</h2>
                 <img src="${data.artist.picture}" alt="">
                 <p class="nombrecancion">${data.release_date}</p>
                 <a href="./detail-artist.html?id=${data.artist.id}"
                 <p class="nombrecancion">${data.artist.name}</p></a
-                </article></a>`
+                </article>`
                  
         section.innerHTML = detaalbum;
       })

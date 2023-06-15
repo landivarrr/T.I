@@ -12,11 +12,13 @@ fetch(url)
         let detaartista = ""
         for (let i = 0; i < 5; i++) {
             document.querySelector(".detallestodo").innerHTML +=
-            detaartista += `<a href="./detail-cancion.html">
+            detaartista += `<a href="./detail-album.html?id=${data.data[i].id}"
                 <article class='cajahija'>
+
                 <h2>${data.data[i].title}</h2>
                 <img src="${data.data[i].cover_medium}" alt="">
                 <p class="nombrecancion">${data.data[i].release_date}</p>
+                
                  </article></a>`}
         section.innerHTML = detaartista;
         })

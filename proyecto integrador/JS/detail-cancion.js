@@ -10,21 +10,49 @@ fetch(url)
     .then(function (data) {
         console.log(data)
         let detacancion = ""
-          detacancion += `<a href="./detail-cancion.html">
+          detacancion += `
                 <article class='cajahija'>
                 <h2>${data.title}</h2>
                 <img src="${data.album.cover}" alt="">
                 <p class="nombrecancion">${data.release_date}</p>
                 <p class="nombrecancion">${data.artist.name}</p>
-                 </article></a>`
+                 </article>`
         section.innerHTML = detacancion;
       })
       .catch(function (error) {
         console.log("Error: " + error);
       })
+
+
       let form=document.querySelector('.formu');
       let buscador=document.querySelector('.buscador');
       
+      let favoritos = [];
+      let recuperoStorage = localStorage.getItem('favoritos');
+      
+      if (recuperoStorage != null) {
+          favoritos = JSON.parse(recuperoStorage);
+      }
+      
+      let fav = document.querySelector('.fav');
+      
+      
+      if (favoritos.includes(id)) {
+          fav.innerText = 'Sacar de mi Playlist'
+      }
+      
+      fav.addEventListener('click', function () {
+          if (favoritos.includes(id)) {
+              let indice = favoritos.indexOf(id)
+              favoritos.splice(indice, 1);
+          } else {
+              favoritos.push(id);
+              fav.innerText = 'Sacar de mi playlist'
+          }
+      
+          let favoritosToString = JSON.stringify(favoritos);
+          localStorage.setItem('favoritos', favoritosToString)
+      })
       form.addEventListener('submit', function(event) {
           event.preventDefault();
       
