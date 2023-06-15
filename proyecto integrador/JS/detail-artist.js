@@ -8,8 +8,22 @@ fetch(url)
         return response.json();
     })
     .then(function (data) {
-        console.log(data)})
-
+        console.log(data)
+        let detaartista = ""
+        for (let i = 0; i < 5; i++) {
+            document.querySelector(".detallestodo").innerHTML +=
+            detaartista += `<a href="./detail-cancion.html">
+                <article class='cajahija'>
+                <h2>${data.data[i].title}</h2>
+                <img src="${data.data[i].cover_medium}" alt="">
+                <p class="nombrecancion">${data.data[i].release_date}</p>
+                 </article></a>`}
+        section.innerHTML = detaartista;
+        })
+      .catch(function (error) {
+        console.log("Error: " + error);
+      })
+        
         let form=document.querySelector('.formu');
         let buscador=document.querySelector('.buscador');
         

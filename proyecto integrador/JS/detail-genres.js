@@ -11,7 +11,7 @@ fetch(endpoint)
     .then(function (data) {
         console.log(data);
         for (let i = 0; i < 10; i++) {
-            document.querySelector('.detallestodo').innerHTML += `
+            document.querySelector('.detallesgeneros').innerHTML += `
             <article class='cajadetalle'>
             <a href="./detail-artist.html?id=${data.artists.data[i].id}>
             <img src="${data.artists.data[i].picture_small}" alt="${data.artists.data[i].name}">
@@ -31,9 +31,9 @@ fetch(endpoint2)
     })
     .then(function (data) {
         console.log(data);
-        document.querySelector('.contenedordgenero').innerHTML = `<article class='cajadetalle'>
+        document.querySelector('.detallesgeneros').innerHTML = `<article class='cajadetalle'>
     <h2>Genero: ${data.name}</h2>
-    <img src="${data.picture_medium}" alt="${data.name}" class="imggeneroelegido">
+    <img src="${data.picture_medium}" alt="${data.name}">
 </article>`
     })
     .catch(function (error) {

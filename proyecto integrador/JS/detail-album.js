@@ -16,16 +16,22 @@ fetch(url)
                 <h2>${data.title}</h2>
                 <img src="${data.artist.picture}" alt="">
                 <p class="nombrecancion">${data.release_date}</p>
-                <p class="nombrecancion">${data.artist.name}</p>
-                <p class="nombrecancion">${data.genres.data}</p>
-                
-                 </article></a>`
+                <a href="./detail-artist.html?id=${data.artist.id}"
+                <p class="nombrecancion">${data.artist.name}</p></a
+                </article></a>`
                  
         section.innerHTML = detaalbum;
       })
       .catch(function (error) {
         console.log("Error: " + error);
       })
+
+
+
+
+
+
+      
       let form=document.querySelector('.formu');
       let buscador=document.querySelector('.buscador');
       
