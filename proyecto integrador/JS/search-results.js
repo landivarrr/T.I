@@ -11,7 +11,7 @@ fetch(url)
     .then(function (data) {
         console.log(data);
         document.querySelector(".results").innerHTML +=
-            `<h1 class="titulosearch">RESULTADOS DE BÚSQUEDA PARA: "${valor}"</h1>`
+            `<h1>RESULTADOS DE BÚSQUEDA PARA: "${valor}"</h1>`
 
         if (data.data.length === 0) {
             document.querySelector(".resultscanciones").innerHTML = "No se encuentran coincidencias";
@@ -20,19 +20,19 @@ fetch(url)
         } else {
             for (let index = 0; index < 5; index++) {
                 document.querySelector(`.resultscanciones`).innerHTML += `<a href="./detallecancion.html?id=${data.data[index].id}">
-                <h3 class="nombrecancionsearch"> ${data.data[index].title}</h3>
-                <img class="imgcancionsearch" src=${data.data[index].album.cover_medium} alt=""/>
+                <h3 > ${data.data[index].title}</h3>
+                <img  src=${data.data[index].album.cover_medium} alt=""/>
                 
                 </a>`;
                 document.querySelector(`.resultsartista`).innerHTML += `<a href="./detallecantante.html?id=${data.data[index].id}">
-                <h3 class="nombreartistasearch"> ${data.data[index].artist.name}</h3>
-                <img class="imgartsearch" src=${data.data[index].artist.picture_medium} alt=""/>
+                <h3 > ${data.data[index].artist.name}</h3>
+                <img  src=${data.data[index].artist.picture_medium} alt=""/>
                 
                 </a>`;
 
                 document.querySelector(`.resultsalbum`).innerHTML += `<a href="./detallealbum.html?id=${data.data[index].id}">
-                <h3 class="nombrealbumsearch"> ${data.data[index].album.title}</h3>
-                <img class="imgcancionsearch" src=${data.data[index].album.cover_medium} alt=""/>
+                <h3 > ${data.data[index].album.title}</h3>
+                <img  src=${data.data[index].album.cover_medium} alt=""/>
 
                 </a>`;
             }
