@@ -200,6 +200,10 @@ h1{
     color: white;
     border-radius: 30px;
 }
+p{
+    color: white;
+    text-align: center;
+}
 @media (max-width: 420px) {
     .logo img{
         display: block;
