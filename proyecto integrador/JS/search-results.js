@@ -1,33 +1,36 @@
-let queryString = location.search
-let queryStringObj = new URLSearchParams (queryString)
-let idserch = queryStringObj.get("buscar")
-console.log(idserch)
-
-let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=" + idserch
-fetch(url)
-.then(function(response){
-    return response.json()
+let qs = location.search
+let qsobj = new URLSearchParams(qs);
+let buscador = qsobj.get('buscador')
+let titulo = document.querySelector('.letter')
+titulo.innerHTML = `TITULOS RELACIONADOS CON TU BUSQUEDA "${buscador}"`
+let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=" + buscador
+let section_searchresults = document.querySelector('#centrar2_searchresults')
+fetch(urlUser)
+.then(function(response) {
+    return response.json();
 })
-.then(function (data) {
-    console.log(data);
-    document.querySelector(".buscador").innerHTML += 
-    `<h1> TÉRMINO BUSCADO : "${idserch}" </h1>
-<h1>
-    RESULTADOS QUE COINCIDEN:
-</h1>` 
+.then(function(data) {
+    console.log(result)
+    
 
-if (data.data.length === 0) {
-    document.querySelector(".detallestodo").innerHTML = "No se encuentran coincidencias";
-  } else {
-    for (let index = 0; index < 5; index++) {
-    document.querySelector(`.detallestodo`).innerHTML += `<a href="./detallecancion.html?id=${data.data[index].id}">
-    <h2 class="nombrecancionsearch">Nombre Canción: ${data.data[index].title}</h2>
-    <img class="imgcancionsearch" src=${data.data[index].album.cover} alt=""/>
-    <h3 class="nombreartistasearch">Nombre Artista: ${data.data[index].artist.name}</h3>
-    <h4 class="nombrealbumsearch">Nombre Álbum: ${data.data[index].album.title}</h4>
-    </a>`;
+    if (data.data.length === 0) {
+        let contenido = ''
+        for (let i = 0; i < 5; i++) {
+            contenido += `<article class="cajahija"><a href="./detail-cancion.html?id=${data.data[index].id} class="letter">
+                        <img class="imagen" src='${data.data[i].album.cover}'></a>
+                        <h3 class="letter">${data.data[i].title}</h3>
+                        <p class="letter">${data.data[i].artist.name}</p>
+                        </article>`   
+        }
+    section_searchresults.innerHTML = contenido
+    } else {
+        titulo.innerHTML = `NO EXISTEN RESULTADOS CON "${buscador}"`
+ 
     }
-  }
+
+  
+    return data;
 })
-.catch(function(error){
-    console.log(error)});
+.catch(function(error) {
+    return error;
+});

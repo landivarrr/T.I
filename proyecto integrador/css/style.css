@@ -200,3 +200,206 @@ h1{
     color: white;
     border-radius: 30px;
 }
+@media (max-width: 420px) {
+    .logo img{
+        display: block;
+        border-radius: 10px;
+        margin: auto;
+        height: 250px;
+    }
+    .todo{
+        display: flex;
+        justify-content: space-between;
+    }
+    .todo li  {
+        list-style: none;
+    }
+    .home{width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;}
+    .todo li a{
+        background-color: rgb(62, 0, 154);
+        display: inline-block;
+        text-decoration: none;
+        color:white;
+        width: 100px;
+        height: 30px;
+        border-radius: 50px;
+        text-align: center;
+        justify-content: baseline;
+        border: solid 3px white;
+        padding: 10px;
+    }
+    
+    .buscador{
+        background-color:rgb(62, 0, 154);
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        width: 100px;
+        height: 30px;
+        border-radius: 50px;
+        text-align: center;
+        justify-content: baseline;
+        border: solid 3px white;
+        padding: 10px;
+    }
+    body{
+        background-color: black;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    footer{
+        background-color:rgb(62, 0, 154);
+        text-align: center;
+        color: white;
+        border-radius: 50%;
+        font-family: 'Raleway',sans-serif;}
+    .cancioneslist{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    
+    }
+    .cajahija{align-items: baseline;
+        justify-content: space-between;
+        align-items: center;
+        background-image: url(https://i.pinimg.com/564x/42/03/f5/4203f5a9848e611e52c5b88ca757ede7.jpg);
+        height: 350px;
+        margin: 10px;
+        padding: 30px;
+        border-color: rgb(90, 236, 5);
+        border:4px rgba(115, 255, 1, 0.763) inset;
+        border: 4px rgb(64, 255, 0);
+        width: 200px;
+        text-align: center;
+        color: white;
+        border-radius: 30px;
+    }
+    .albumeslist{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .artistaslist{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+    }
+    h2{
+        display: flex;
+        justify-content: center;
+        color: white;
+    }
+    .nombrecancion{
+        color: white;
+    }
+    h1{
+        color: white;
+    }
+    .detallestodo{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    a{
+        text-decoration: none;
+    }
+    .genreslist{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .boton{
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+    }
+    .cajadetalle{
+        align-items: baseline;
+        justify-content: space-between;
+        align-items: center;
+        background-image: url(https://i.pinimg.com/564x/42/03/f5/4203f5a9848e611e52c5b88ca757ede7.jpg);
+        height: 200px;
+        margin: 10px;
+        padding: 30px;
+        border-color: rgb(90, 236, 5);
+        border:4px rgba(115, 255, 1, 0.763) inset;
+        border: 4px rgb(64, 255, 0);
+        width: 200px;
+        text-align: center;
+        color: white;
+        border-radius: 30px;
+    }
+    h1{
+        text-align: center;
+    }
+    
+    .botondeplaylist{
+        display: flex;
+        flex:wrap;
+        justify-content: center;
+        color: white;
+    }
+    .listacanciones{
+        color: white;
+    }
+    .cancionesdisco{
+        display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            color: white;
+    }
+    .detallegeneros{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+    }
+    .detallegeneros1{
+        align-items: baseline;
+        justify-content: space-between;
+        align-items: center;
+        background-image: url(https://i.pinimg.com/564x/42/03/f5/4203f5a9848e611e52c5b88ca757ede7.jpg);
+        height: 200px;
+        margin: 10px;
+        padding: 30px;
+        border-color: rgb(90, 236, 5);
+        border:4px rgba(115, 255, 1, 0.763) inset;
+        border: 4px rgb(64, 255, 0);
+        width: 200px;
+        text-align: center;
+        color: white;
+        border-radius: 30px;
+    }
+    .detallesgeneros2{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    .detallecaja{
+        align-items: baseline;
+        justify-content: space-between;
+        align-items: center;
+        background-image: url(https://i.pinimg.com/564x/42/03/f5/4203f5a9848e611e52c5b88ca757ede7.jpg);
+        height: 200px;
+        margin: 10px;
+        padding: 30px;
+        border-color: rgb(90, 236, 5);
+        border:4px rgba(115, 255, 1, 0.763) inset;
+        border: 4px rgb(64, 255, 0);
+        width: 200px;
+        text-align: center;
+        color: white;
+        border-radius: 30px;
+    }}
