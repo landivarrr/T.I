@@ -18,6 +18,7 @@ fetch(url)
                 <p class="nombrecancion">${data.release_date}</p>
                 <a href="./detail-artist.html?id=${data.artist.id}"
                 <p class="nombrecancion">${data.artist.name}</p></a
+                <p>${data.genres.data[0].name}</p>
                 </article>`
                  
         section.innerHTML = detaalbum;
@@ -26,7 +27,25 @@ fetch(url)
         console.log("Error: " + error);
       })
 
-
+      fetch(url)
+      .then(function (response) {
+          return response.json();
+      })
+      .then(function (data) {
+          console.log(data)
+          let detaalbum = ""
+          
+          for (let i = 0; i < 5; i++){document.querySelector(".cancionesdisco").innerHTML
+            `<a href="./detail-track.html?id=${data.tracks.data[i].id}">
+            <article class="cajahija">
+                <img src="${data.cover_medium}" alt="${data.tracks.data[i].title_short}">
+                <h3>${data.tracks.data[i].title_short}</h3>
+            </article>`
+            
+        }})
+        .catch(function (error) {
+          console.log("Error: " + error);
+        })
 
 
 

@@ -1,42 +1,33 @@
-let formularios = document.querySelector('.buscador')
-        formularios.addEventListener('focus', function () {
-       
-        })
-        let loader = document.getElementById("loader");
+let queryString = location.search
+let queryStringObj = new URLSearchParams (queryString)
+let idserch = queryStringObj.get("buscar")
+console.log(idserch)
 
-        function mostrarLoader() {
-          loader.style.display = "block";
-        }
-        
-        function ocultarLoader() {
-          loader.style.display = "none";
-        }
-
-
-
-
-
-
-
-
-
-
-
-let form=document.querySelector('.formu');
-let buscador=document.querySelector('.buscador');
-
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    if (buscador.value == "") {
-        alert('No puedes enviar el form vacio');
-    } else if(buscador.value.length < 3){
-        alert('Debes escribir 3 caracteres');
-    } else {
-        this.submit();
-    }
+let url = "https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=" + idserch
+fetch(url)
+.then(function(response){
+    return response.json()
 })
-let formulario = document.querySelector('.buscador')
-        formulario.addEventListener('focus', function () {
-       
-        })
+.then(function (data) {
+    console.log(data);
+    document.querySelector(".buscador").innerHTML += 
+    `<h1> TÉRMINO BUSCADO : "${idserch}" </h1>
+<h1>
+    RESULTADOS QUE COINCIDEN:
+</h1>` 
+
+if (data.data.length === 0) {
+    document.querySelector(".detallestodo").innerHTML = "No se encuentran coincidencias";
+  } else {
+    for (let index = 0; index < 5; index++) {
+    document.querySelector(`.detallestodo`).innerHTML += `<a href="./detallecancion.html?id=${data.data[index].id}">
+    <h2 class="nombrecancionsearch">Nombre Canción: ${data.data[index].title}</h2>
+    <img class="imgcancionsearch" src=${data.data[index].album.cover} alt=""/>
+    <h3 class="nombreartistasearch">Nombre Artista: ${data.data[index].artist.name}</h3>
+    <h4 class="nombrealbumsearch">Nombre Álbum: ${data.data[index].album.title}</h4>
+    </a>`;
+    }
+  }
+})
+.catch(function(error){
+    console.log(error)});

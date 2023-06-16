@@ -12,7 +12,7 @@ fetch(endpoint)
         console.log(data);
         for (let i = 0; i < 10; i++) {
             document.querySelector('.detallesgeneros').innerHTML += `
-            <article class='cajadetalle'>
+            <article class='detallegeneros1'>
             <img src="${data.artists.data[i].picture_small}" alt="${data.artists.data[i].name}">
             <p>
             ${data.artists.data[i].name}
@@ -30,7 +30,7 @@ fetch(endpoint2)
     })
     .then(function (data) {
         console.log(data);
-        document.querySelector('.detallesgeneros').innerHTML = `<article class='cajadetalle'>
+        document.querySelector('.detallesgeneros2').innerHTML = `<article class='detallecaja'>
     <h2>Genero: ${data.name}</h2>
     <img src="${data.picture_medium}" alt="${data.name}">
 </article>`

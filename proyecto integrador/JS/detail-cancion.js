@@ -22,13 +22,11 @@ fetch(url)
       .catch(function (error) {
         console.log("Error: " + error);
       })
-
-
-      let form=document.querySelector('.formu');
-      let buscador=document.querySelector('.buscador');
-      
       let favoritos = [];
+
+
       let recuperoStorage = localStorage.getItem('favoritos');
+      
       
       if (recuperoStorage != null) {
           favoritos = JSON.parse(recuperoStorage);
@@ -37,22 +35,29 @@ fetch(url)
       let fav = document.querySelector('.fav');
       
       
-      if (favoritos.includes(id)) {
+      if (favoritos.includes(idcanciones)) {
           fav.innerText = 'Sacar de mi Playlist'
       }
       
       fav.addEventListener('click', function () {
-          if (favoritos.includes(id)) {
-              let indice = favoritos.indexOf(id)
+          if (favoritos.includes(idcanciones)) {
+              let indice = favoritos.indexOf(idcanciones)
               favoritos.splice(indice, 1);
+              fav.innerText = 'Agregar a mi playlist'
           } else {
-              favoritos.push(id);
+              favoritos.push(idcanciones);
               fav.innerText = 'Sacar de mi playlist'
           }
       
           let favoritosToString = JSON.stringify(favoritos);
           localStorage.setItem('favoritos', favoritosToString)
       })
+
+      
+      
+      
+
+
       form.addEventListener('submit', function(event) {
           event.preventDefault();
       
