@@ -32,7 +32,7 @@ fetch(url)
           favoritos = JSON.parse(recuperoStorage);
       }
       
-      let fav = document.querySelector('.fav');
+      let fav = document.querySelector('.botonfav');
       
       
       if (favoritos.includes(idcanciones)) {
