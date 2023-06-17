@@ -30,7 +30,7 @@
     padding: 10px;
 }
 
-.buscador{
+/* .buscador{
     background-color:rgb(62, 0, 154);
     display: inline-block;
     text-decoration: none;
@@ -42,7 +42,171 @@
     justify-content: baseline;
     border: solid 3px white;
     padding: 10px;
+} */
+
+/* Buscador  */
+.buscadorheader {
+    width: 225px;
+
 }
+
+.buscador {
+    align-self: flex-start;
+    justify-self: flex-end;
+    display: flex;
+    margin-top: 2.5vh;
+    width: 225px;
+}
+
+#busqueda {
+    width: 225px;
+
+}
+
+/* Search results */
+.mainsearch {
+    min-height: 64vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+
+.cajasearch {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50vw;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    border: 3px white solid;
+    border-radius: 50px;
+    padding: 10px;
+    
+}
+.cajasearch4 {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50vw;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    border: 3px white solid;
+    border-radius: 50px;
+    padding: 40px;
+    
+}
+.cajasearch5 {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50vw;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    border: 3px white solid;
+    border-radius: 50px;
+    padding: 40px;
+    margin-bottom: 30px;
+    
+}
+.cajasearch3 {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50vw;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    border: 3px white solid;
+    border-radius: 50px;
+    padding: 40px;
+    
+}
+.cajasearch2 {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50vw;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    border: 3px white solid;
+    border-radius: 50px;
+    padding: 40px;  
+}
+
+.leyendasinres{
+    text-align: center;
+}
+.articlesearch {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+justify-content: space-around;
+align-content: center;
+}
+.articlesearch2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+justify-content: space-around;
+align-content: center;
+}
+.articlesearch3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+justify-content: space-around;
+align-content: center;
+}
+
+.leyendabusqueda {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.titulosearch {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+}
+.cancionhijasearch {
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(55, 201, 152, 50%);
+    border: 3px rgba(0, 0, 0, 0.75) solid;
+    height: 70px;
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 15px;
+}
+
+.cancionimgsearch {
+    width: 70px;
+    height: 70px;
+    
+    border: 3px white solid;
+    align-self: center;
+    
+}
+.nombreartistasearch {
+    font-size: 20px;
+    align-self: center ;
+    
+    color: white;
+    text-decoration: none;
+}
+
+.nombrealbumsearch {
+    font-size: 15px;
+    align-self: center;
+    
+    text-decoration: none;
+    color: white;
+}
+
 body{
     background-color: black;
     background-size: cover;
@@ -204,6 +368,208 @@ p{
     color: white;
     text-align: center;
 }
+
+/* Playlist */
+.playlistplay{
+    width: 200px;
+    height: 60px;
+    justify-self: flex-end;
+}
+.nombrecancionplaylist{
+    font-size: 15px;
+}
+#bodyplaylist {
+    position: relative;
+    min-height: 100vh;
+}
+.mainplaylist {
+    padding-bottom: 50px;
+}
+.articleplaylist {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.botonplaylist{
+    margin-top: 10px;
+}
+.imagenesplaylist {
+    max-width: 100px;
+    max-height: 100px;
+    padding: 0px;
+    margin: 0px;
+}
+.logoplaylist {
+    border: 3px solid white;
+    max-height: 200px;
+    max-width: 200px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.listaplaylistcontenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cancionesplaylistpadre {
+    background-color: rgba(0, 0, 0, 75%);
+    border-radius: 20px;
+    border: 3px white solid;
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+.cancionesplaylisthija{
+    border: 2px white solid;
+    background-color: rgba(206, 43, 43, 0.596);
+    width: 60vw;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    max-height: 60px;
+    align-items: center;
+    
+}
+.imagencancionplaylist {
+    height: 60px;
+    margin-top: 2px;
+}
+.iconosplaylist {
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 220px;
+}
+.botonplay {
+    margin-right: 10px;
+}
+.hiperplaylist {
+    text-decoration: none;
+    color: white;
+}
+.cancionplaylistpadre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.cancionplaylisthija {
+    border-radius: 20px;
+    border: 3px white solid;
+    background-color: rgba(0, 0, 0, 0.75);
+    margin: 10px;
+}
+.nombreplaylist {
+    margin: 10px;
+    font-size: 30px;
+    color: white;
+}
+
+/* Detail Track  */
+
+.articulocancion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.articulocancionhija {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    background-color: rgba(126, 126, 126, 0.5);
+    align-items: center;
+    border: 3px solid rgb(0, 197, 16);
+    border-radius: 10px;
+}
+
+.favoritoscontenedor {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 200px;
+}
+.contenedorfav{
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 380px;
+    background-color: rgba(126, 126, 126, 0.5);
+    align-items: center;
+    border: 3px solid rgb(0, 197, 16);
+    border-radius: 10px;
+}
+.iframespotify {
+    border: 3px solid rgb(0, 197, 16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   background-color: black;
+   padding: 30px;
+   width: 250px;
+}
+.imgdetailtrack {
+    border: 3px solid rgb(0, 197, 16)
+}
+.iframe {
+    height: 100px;
+    min-width: 300px;
+}
+
+.titulocanciondetalle{
+    text-align: center;
+}
+.verplaylist {
+    text-decoration: none;
+    color: rgb(162, 173, 4);
+}
+
+.hiperresultados{
+    text-decoration: none;
+    color: white;
+}
+.nombrebandacancion {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.detallecanciondisco {
+    margin-top: 0px;
+    text-align: center
+}
+
+/* Dark Mode */
+
+.botonOscuro{
+    width: 100px;
+    margin-top: 10px;
+}
+                        
+
+
+
 @media (max-width: 420px) {
     .logo img{
         display: block;
@@ -406,4 +772,31 @@ p{
         text-align: center;
         color: white;
         border-radius: 30px;
-    }}
+    }
+     /* Resultados Search */
+     .cajasearch {
+        background-color: rgba(0, 0, 0, 0.5);
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+        margin-top: 60px;
+        border: 3px white solid;
+        padding: 10px;
+    }
+    .cajasearch2 {
+        background-color: rgba(0, 0, 0, 0.5);
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        min-width: 300px;
+        margin-top: 60px;
+        border: 3px white solid;
+        padding: 10px;
+    }
+    .mainsearch {
+        display: flex;
+        flex-direction: column;
+        min-height: 606.5px;
+    }
+}

@@ -7,24 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/7823139b18.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <section class="logo">
-            <img src="./img/Captura de Pantalla 2023-06-10 a la(s) 02.37.12.png" alt="">
+            <a href="./home.html" ><img src="./img/Captura de Pantalla 2023-06-10 a la(s) 02.37.12.png" alt="logo"></a>
         </section>
         <ul class="todo">
             <li class="all"><a href="./home.html">INICIO</a></li>
             <li class="all"><a href="./genres.html">GENEROS</a></li>
             <li class="all"><a href="./playlist.html">PLAYLIST</a></li>
-            <li class="formu">
-                <form action="./search-results.html"><input type="canciones" placeholder="Escribe aqui" name="buscador"
-                        class="buscador"><button type="submit">Buscar</button>
-                </form>
-            </li>
         </ul>
+        <div class="buscadorheader">
+            <form action="./search-results.html" class="buscador" method="get">
+                <input id="busqueda" type="text" name="buscar" placeholder="Buscar">
+                <div>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </div>
     </header>
+    <button class="botonOscuro">Modo Claro</button>
     <h1 class="h1generos">Artistas del Genero</h1>
     <section class="detallesgeneros">
     </section>

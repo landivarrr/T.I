@@ -1,82 +1,99 @@
-let qs= location.search
-let qso=new URLSearchParams(qs)
-let idcanciones=qso.get('id')
-let url=`https://api.allorigins.win/raw?url=https://api.deezer.com/track/${idcanciones}`;
-let section = document.querySelector('.detallestodo')
-fetch(url)
+let qs = location.search;
+let qsOL = new URLSearchParams(qs)
+let idPJ = qsOL.get('id')
+console.log(idPJ);
+
+let endpoint = "https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + idPJ
+
+fetch(endpoint)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
         console.log(data)
-        let detacancion = ""
-          detacancion += `
-                <article class='cajahija'>
-                <h2>${data.title}</h2>
-                <img src="${data.album.cover}" alt="">
-                <p class="nombrecancion">${data.release_date}</p>
-                <p class="nombrecancion">${data.artist.name}</p>
-                 </article>`
-        section.innerHTML = detacancion;
-      })
-      .catch(function (error) {
-        console.log("Error: " + error);
-      })
-      let favoritos = [];
+        document.querySelector('.articulocancionhija').innerHTML += `<h1 class="titulocanciondetalle">
+        ${data.title}
+    </h1>
+    <div class="iframespotify">
+    <img src="${data.album.cover_medium}" alt="${data.title}" class = "imgdetailtrack">
+    <iframe src=${data.preview}
+        frameborder="0" allowtransparency="true" allow="encrypted-media" class="iframe"></iframe>
+        </div>
+    
+    <a href="./playlist.html" class="verplaylist">
+                        <p>Ir a Playlist</p> 
+                    </a>
+    <a href="./detail-artist.html?id=${data.artist.id}" class="hiperresultados">
+        <h4 class="nombrebandacancion">
+            ${data.artist.name}
+        </h4>
+    </a>
+    <a href="./detail-album.html?id=${data.album.id}" class="hiperresultados">
+        <h5 class="detallecanciondisco">
+            Disco:  ${data.album.title}
+        </h5>
+    </a>`;
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+
+let favoritos = [];
+let recuperoStorage = localStorage.getItem('favoritos')
+
+if (recuperoStorage != null) {
+    favoritos = JSON.parse(recuperoStorage);
+}
+let cor = document.querySelector(`.corazon`)
+let fav = document.querySelector('.fav');
+if (favoritos.includes(idPJ)) {
+    fav.innerText = "Quitar de favoritos"
+    cor.innerHTML = `<i class="fa-solid fa-heart"></i>`
+};
+
+fav.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (favoritos.includes(idPJ)) {
+        let indice = favoritos.indexOf(idPJ);
+        favoritos.splice(indice, 1);
+        fav.innerText = "Agregar a favoritos";
+        cor.innerHTML = `<i class="fa-regular fa-heart"></i>`
+    } else {
+        favoritos.push(idPJ);
+        fav.innerText = "Quitar de favoritos";
+        cor.innerHTML = `<i class="fa-solid fa-heart"></i>`;
+    }
 
 
-      let recuperoStorage = localStorage.getItem('favoritos');
-      
-      
-      if (recuperoStorage != null) {
-          favoritos = JSON.parse(recuperoStorage);
-      }
-      
-      let fav = document.querySelector('.botonfav');
-      
-      
-      if (favoritos.includes(idcanciones)) {
-          fav.innerText = 'Sacar de mi Playlist'
-      }
-      
-      fav.addEventListener('click', function () {
-          if (favoritos.includes(idcanciones)) {
-              let indice = favoritos.indexOf(idcanciones)
-              favoritos.splice(indice, 1);
-              fav.innerText = 'Agregar a mi playlist'
-          } else {
-              favoritos.push(idcanciones);
-              fav.innerText = 'Sacar de mi playlist'
-          }
-      
-          let favoritosToString = JSON.stringify(favoritos);
-          localStorage.setItem('favoritos', favoritosToString)
-      })
-
-      
-      
-      
+    let favToString = JSON.stringify(favoritos);
+    localStorage.setItem('favoritos', favToString);
+});
 
 
-      form.addEventListener('submit', function(event) {
-          event.preventDefault();
-      
-          if (buscador.value == "") {
-              alert('No puedes enviar el form vacio');
-          } else if(buscador.value.length < 3){
-              alert('Debes escribir 3 caracteres');
-          } else {
-              this.submit();
-          }
-      })
-      let formulario = document.querySelector('.buscador')
-              formulario.addEventListener('focus', function () {
-             
-              })
-      
-        
+let buscador = document.querySelector('.buscador');
+let campoBuscar = document.querySelector('#busqueda');
+
+buscador.addEventListener('submit', function (e) {
+    e.preventDefault()
+    if (campoBuscar.value.length == 0) {
+        alert("No puedes enviar el formulario vacio!")
+    } else if (campoBuscar.value.length < 3) {
+        alert("El termino buscado debe tener mas de 3 letras")
+    } else {
+        this.submit();
+    }
+});
 
 
-  
-  
-  
+let botonOscuro = document.querySelector(".botonOscuro")
+let body = document.querySelector("body")
+
+botonOscuro.addEventListener('click', function (e) {
+    if (botonOscuro.innerText == "Modo Claro") {
+        body.style.background = 'white';
+        this.innerText = 'Modo Oscuro';
+    } else {
+        body.style.background = '#000000e2';
+        this.innerText = 'Modo Claro';
+    }
+})

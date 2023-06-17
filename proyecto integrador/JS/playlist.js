@@ -1,35 +1,70 @@
 
-let recuperoStorage = localStorage.getItem('cancionesfavoritas');
-let playlist = JSON.parse(recuperoStorage)
-let section = document.querySelector('#cancionesfav');
-let cancionplaylist = '';
+let recuperoStorage = localStorage.getItem(`favoritos`)
+let favoritos = JSON.parse(recuperoStorage)
+console.log(favoritos);
 
- 
-if (playlist == null || playlist.length == 0) {
-    section.innerHTML ='<p>No hay canciones en tu playlist</p>'
+let section = document.querySelector('.cancionesplaylistpadre')
+
+if (favoritos == null  || favoritos.length == 0) {
+    section.innerHTML = `<h1>No hay favoritos!!!</h1>`
 } else {
-
-    for (let index = 0; index < playlist.length; index++) {
-
-        let url = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${playlist[index]}`;
-
-        fetch(url)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            console.log(data);
-
-            cancionplaylist += `<article>
-                                        <h2>Nombre de la canción: ${data.title}</h2>
-                                        <img src=${data.album.cover_medium} alt=""> </article>`;
-
-            section.innerHTML += cancionplaylist;
-            
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
+    for (let i = 0; i < favoritos.length; i++) {
         
+        let url = `https://api.allorigins.win/raw?url=https://api.deezer.com/track/${favoritos[i]}` 
+        fetch(url).then(function (response) {
+            return response.json()
+        }).then (function (data) {
+            console.log(data);
+            section.innerHTML += `
+            <div class="hiperplaylist">
+                        <div class="cancionesplaylisthija"> 
+                        <a href="./detail-track.html?id=${data.id}">
+                            <img src="${data.album.cover_medium}" alt="parachutes" class="imagencancionplaylist">
+                            </a>
+                            <h3 class="nombrecancionplaylist">${data.title}</h3>
+                            <iframe src="${data.preview}" class="playlistplay" frameborder="0"></iframe>
+                        </div>
+                    </div>
+            `;
+        }).catch(function(e){
+        console.log(e);}
+        )}
+};
+let boton = document.querySelector(`.botonplaylist`)
+
+    boton.addEventListener(`click`,function (e) {
+        e.preventDefault();
+        let nuevaImagen = prompt(`Pegar aqui la URL de tu nueva imagen!`);
+        let portada = document.querySelector('.logoplaylist');
+        portada.src = nuevaImagen;
+    })
+
+
+
+let buscador = document.querySelector('.buscador')
+let campoBuscar = document.querySelector('#busqueda')
+
+buscador.addEventListener('submit', function (e) {
+    e.preventDefault()
+    if (campoBuscar.value.length == 0 ) {
+        alert("No puedes enviar el formulario vacio!")
+    } else if (campoBuscar.value.length < 3 ) {
+        alert("El termino buscado debe tener mas de 3 letras")
+    } else {
+        this.submit();
     }
-}
+});
+
+
+let botonOscuro = document.querySelector(".botonOscuro")
+let body = document.querySelector("body")
+
+botonOscuro.addEventListener('click', function (e) {
+    if (botonOscuro.innerText == "Modo Claro") {
+        body.style.background = 'white';
+        this.innerText = 'Modo Oscuro';
+    } else {
+        body.style.background = '#000000e2';
+        this.innerText = 'Modo Claro';
+    }
+})

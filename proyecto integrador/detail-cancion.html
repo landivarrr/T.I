@@ -7,30 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>Detalles de la cancion</title>
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/7823139b18.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <section class="logo">
-            <img src="./img/Captura de Pantalla 2023-06-10 a la(s) 02.37.12.png" alt="">
+            <a href="./home.html" ><img src="./img/Captura de Pantalla 2023-06-10 a la(s) 02.37.12.png" alt="logo"></a>
         </section>
         <ul class="todo">
             <li class="all"><a href="./home.html">INICIO</a></li>
             <li class="all"><a href="./genres.html">GENEROS</a></li>
             <li class="all"><a href="./playlist.html">PLAYLIST</a></li>
-            <li class="formu">
-                <form action="./search-results.html"><input type="canciones" placeholder="Escribe aqui" name="buscador"
-                        class="buscador"><button type="submit" src="./playlist.html">Buscar</button>
-                </form>
-            </li>
         </ul>
+        <div class="buscadorheader">
+            <form action="./search-results.html" class="buscador" method="get">
+                <input id="busqueda" type="text" name="buscar" placeholder="Buscar">
+                <div>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </div>
     </header>
-    <h1>Detalles de la cancion</h1>
+
+    <!-- <h1>Detalles de la cancion</h1>
     <section class="detallestodo">
     </section>
     <div class="boton">
     <button clas="botonfav" onclick="">Agregar a playlist</button>
     <a class="botondeplaylist"href="./playlist.html"> Ver mi playlist</a></div>
+     -->
+     <section>
+        <button class="botonOscuro">Modo Claro</button>
+        <article class="articulocancion">
+            <div class="articulocancionhija">
+                <div class="favoritoscontenedor">
+                    
+                </div>
+            </div>
+            <div class="contenedorfav" >
+                <button class="fav">Agregar a Playlist</button>
+                <div class = "corazon">
+                <i class="fa-regular fa-heart"></i>
+                
+                </div>
+            </div>
+        </article>
+    </section>
     
     <footer>
         <p>Francisco Landivar | Santiago Rodriguez</p>
