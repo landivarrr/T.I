@@ -495,9 +495,8 @@ p{
     flex-direction: column;
     justify-content: center;
     width: 400px;
-    background-color: rgba(126, 126, 126, 0.5);
+    background-image: url(https://i.pinimg.com/564x/42/03/f5/4203f5a9848e611e52c5b88ca757ede7.jpg);
     align-items: center;
-    border: 3px solid rgb(0, 197, 16);
     border-radius: 10px;
 }
 
@@ -514,13 +513,10 @@ p{
     flex-direction: row;
     justify-content: space-around;
     width: 380px;
-    background-color: rgba(126, 126, 126, 0.5);
     align-items: center;
-    border: 3px solid rgb(0, 197, 16);
     border-radius: 10px;
 }
 .iframespotify {
-    border: 3px solid rgb(0, 197, 16);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -528,9 +524,6 @@ p{
    background-color: black;
    padding: 30px;
    width: 250px;
-}
-.imgdetailtrack {
-    border: 3px solid rgb(0, 197, 16)
 }
 .iframe {
     height: 100px;
@@ -560,7 +553,7 @@ p{
     text-align: center
 }
 
-/* Dark Mode */
+
 
 .botonOscuro{
     width: 100px;
@@ -642,9 +635,6 @@ p{
         height: 350px;
         margin: 10px;
         padding: 30px;
-        border-color: rgb(90, 236, 5);
-        border:4px rgba(115, 255, 1, 0.763) inset;
-        border: 4px rgb(64, 255, 0);
         width: 200px;
         text-align: center;
         color: white;
